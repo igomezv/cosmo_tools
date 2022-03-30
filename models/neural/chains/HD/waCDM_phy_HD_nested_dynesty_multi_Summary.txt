@@ -1,0 +1,17 @@
+SUMMARY
+-------
+nested :multi
+dynamic : False
+ANN :False
+engine: dynesty
+Om: 0.2962 +/- 0.0878
+Obh2: 0.0221 +/- 0.0008
+h: 0.6959 +/- 0.0864
+w: -1.1874 +/- 0.4488
+wa: 0.1546 +/- 1.0920
+nlive: 100
+niter: 973
+ncall: 6040
+eff(%): 17.781
+logz: -12.220 +/-  0.267
+Elapsed time: 0.182 minutes = 10.950 seconds 
