@@ -3,15 +3,18 @@ SUMMARY
 analyzer: nested
 nested_algorithm: multi
 dynamic: False
-maxlike: 5.8392
+maxlike: 21.2870
 nlive: 250
-niter: 2097
-ncall: 12631
-%eff: 18.5892
-logz: -9.6025 +/- 0.1424
-Om: 0.3230 +/- 0.0212
+niter: 2137
+ncall: 12313
+%eff: 19.3941
+logz: -25.2092 +/- 0.1517
+Om: 0.3259 +/- 0.0177
 Obh2: 0.0220 +/- 0.0005
-h: 0.7631 +/- 0.0283
-b: 0.1592 +/- 0.0895
+h: 0.7711 +/- 0.0214
+b: 0.1544 +/- 0.0927
 
-Elapsed time: 1.472 minutes = 88.336 seconds 
+Omrad = 0.00004
+OmNu = 0.00106
+
+Elapsed time: 1.198 minutes = 71.909 seconds 
