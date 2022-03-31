@@ -3,15 +3,15 @@ SUMMARY
 analyzer: nested
 nested_algorithm: multi
 dynamic: False
-maxlike: 1695.6543
-nlive: 250
-niter: 4619
-ncall: 29077
-%eff: 16.7486
-logz: -1709.4873 +/- 0.3146
-Om: 0.3716 +/- 0.0668
+maxlike: 1695.6650
+nlive: 350
+niter: 6504
+ncall: 26317
+%eff: 26.0478
+logz: -1709.6128 +/- 0.2664
+Om: 0.3321 +/- 0.0102
 Obh2: 0.0200 +/- 0.0000
-h: 0.7453 +/- 0.0690
-b: 0.1595 +/- 0.0866
+h: 0.7789 +/- 0.0119
+b: 0.1510 +/- 0.0884
 
-Elapsed time: 40.535 minutes = 2432.076 seconds 
+Elapsed time: 31.085 minutes = 1865.109 seconds 
