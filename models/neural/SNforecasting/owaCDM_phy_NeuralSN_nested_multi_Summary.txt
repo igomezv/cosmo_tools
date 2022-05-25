@@ -4,15 +4,15 @@ analyzer: nested
 nested_algorithm: multi
 dynamic: False
 nlive: 200
-niter: 2110
-ncall: 11114
-%eff: 20.7936
-logz: -177.3855 +/- 0.2036
-Om: 0.3347 +/- 0.1119
-Obh2: 0.0220 +/- 0.0004
-h: 0.6527 +/- 0.1392
-w: -0.1065 +/- 0.0839
-wa: 0.5283 +/- 0.5138
-Ok: -0.0004 +/- 0.0114
+niter: 2466
+ncall: 12326
+%eff: 21.6372
+logz: -222.9674 +/- 0.2347
+Om: 0.3194 +/- 0.1115
+Obh2: 0.0220 +/- 0.0005
+h: 0.6512 +/- 0.1392
+w: -0.0234 +/- 0.0218
+wa: 1.2147 +/- 0.3418
+Ok: -0.0037 +/- 0.0108
 
-Elapsed time: 109.706 minutes = 6582.367 seconds 
+Elapsed time: 258.638 minutes = 15518.299 seconds 
