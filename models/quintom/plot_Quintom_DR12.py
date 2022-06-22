@@ -13,55 +13,60 @@ import numpy as np
 import pylab
 
 
-steps = 9
+steps = 20
 coupling = 0
-zl = np.arange(0, 3, 0.05)
+zl = np.arange(0, 3.05, 0.05)
 
-fname = 'Quintessence'
-
+# fname = 'Quintessence'
+# fname = 'Phantom'
+# fname = 'Quintom_mquin'
+fname = 'Quintom_mphan'
+# fname = 'Quintom_coupling_mquin'
+# fname = 'Quintom_coupling_mphan'
+# fname = 'Quintom_coupling_both'
 # ---
 if fname == 'Quintessence':
     T = QuintomCosmology(vary_mquin=True)
-    name = fname
+    name = "a) "+fname
     mlabel = '$m_\phi$'
 
 if fname == 'Phantom':
     T = QuintomCosmology(vary_mphan=True)
-    name = fname
+    name = "b) "+fname
     mlabel = '$m_\psi$'
 
 if fname == 'Quintom_mquin':
     T = QuintomCosmology(vary_mquin=True, vary_mphan=True)
     mphan = 1.2
-    name = 'Quintom, $m_{\psi}$=%0.1f'%mphan
+    name = "c) "+'Quintom, $m_{\psi}$=%0.1f'%mphan
     mlabel = '$m_\phi$'
 
 if fname == 'Quintom_mphan':
     T = QuintomCosmology(vary_mquin=False, vary_mphan=True)
     mphi = 1.2
-    name = 'Quintom, $m_{\phi}$=%0.1f'%mphi
+    name = "d) "+'Quintom, $m_{\phi}$=%0.1f'%mphi
     mlabel = '$m_\psi$'
 
 if fname == 'Quintom_coupling_mquin':
     T = QuintomCosmology(vary_mquin=True, vary_coupling=True)
     mphan = 1.2
     coupling = 4.0
-    name = 'Quintom, $m_{\psi}$=%0.1f, $\\beta=%0.1f$'%(mphan, coupling)
+    name = 'a) Quintom, $m_{\psi}$=%0.1f, $\\beta=%0.1f$'%(mphan, coupling)
     mlabel = '$m_\phi$'
 
 if fname == 'Quintom_coupling_mphan':
     T = QuintomCosmology(vary_mphan=True, vary_coupling=True)
-    mphi = 1.0 #1.2
-    coupling = 10 #6.0
-    name = 'Quintom, $m_{\phi}$=%0.1f, $\\beta=%0.1f$'%(mphi, coupling)
+    mphi = 1.2
+    coupling = 6.0
+    name = 'b) Quintom, $m_{\phi}$=%0.1f, $\\beta=%0.1f$'%(mphi, coupling)
     mlabel = '$m_\psi$'
 
 if fname == 'Quintom_coupling_both':
     T = QuintomCosmology(vary_mquin=True, vary_mphan=True, vary_coupling=True)
-    mphi = 2.0
+    mphi = 1.5
     mphan = 1.0
     coupling = -1
-    name = 'Quintom, $m_{\phi}$=%0.1f, $m_{\psi}$=%0.1f'%(mphi, mphan)
+    name = 'c) Quintom, $m_{\phi}$=%0.1f, $m_{\psi}$=%0.1f'%(mphi, mphan)
     mlabel = '$\\beta$'
 
 
@@ -71,7 +76,7 @@ if fname == 'Quintom_coupling_both':
 else:
     min, max = (0.1, 2.5)
 if coupling < 0:
-    min, max = (-10, -1.)
+    min, max = (1.0, 10)
 
 
 step = (max-min)/steps
@@ -148,19 +153,20 @@ x3 = [T2.DaOverrd(z)/fixer(z) for z in zl]
 
 
 params1 = {'backend': 'pdf',
-               'axes.labelsize': 18,
+               'axes.labelsize': 20,
                'xtick.labelsize': 18,
                'ytick.labelsize': 18,
-               'legend.fontsize': 16,
-               'lines.markersize': 6,
+               'legend.fontsize': 20,
+               'lines.markersize': 15,
                'font.size': 20,
                'text.usetex': True}
+
 pylab.rcParams.update(params1)
 
 
 ## --- Plotting --
 fig, (ax1, ax2, ax3, ax4)= plt.subplots(4, sharex=True, gridspec_kw={'hspace': 0}, figsize=(7,10))
-fig.suptitle(name, fontsize=17,  y=0.95)
+fig.suptitle(name, fontsize=20,  y=0.91)
 
 ## -- Plot 1
 for x, w, z in zip(zz, ww, PP):
@@ -171,7 +177,8 @@ if (fname == 'Quintessence') or (fname == 'Quintomcopphi'):
     ax1.set_ylabel('$w(z)$', fontsize=20)
 ax1.axhline(y=-1.0, color='k', linestyle='--')
 if coupling < 0:
-    ax1.set_ylim(-3, 0.)
+    ax1.set_ylim(-1.5, 0.)
+ax1.set_ylim(-1.2, -0.8) #zoom
 
 
 ## -- Plot 2
@@ -193,10 +200,10 @@ mymap = mpl.colors.LinearSegmentedColormap.from_list('mycolors',['red','green'])
 levels = np.arange(min, max+step, step)
 CS3 = plt.contourf(Z, levels, cmap=mymap)
 
-cbaxes = fig.add_axes([0.91, 0.1, 0.02, 0.78])
-cbar = pylab.colorbar(CS3, cax=cbaxes)
-cbar.set_label(mlabel, rotation=0, fontsize=18, labelpad=-10)
-cbar.ax.tick_params(labelsize=12)
+cbaxes = fig.add_axes([0.92, 0.1, 0.02, 0.78])
+cbar = pylab.colorbar(CS3, cax=cbaxes, format='%.1f')
+cbar.set_label(mlabel, rotation=0, fontsize=18, labelpad=-10, y=1.05)
+cbar.ax.tick_params(labelsize=16)
 
 
 ## -- Plot 3
@@ -208,7 +215,6 @@ ax3.plot(zl, x2 , color='k', linestyle='--')
 if (fname == 'Quintessence') or (fname == 'Quintomcopphi'):
     ax3.set_ylabel("${\\rm zD_H(z)}/r_d\\sqrt{z}$")
 
-
 ## -- Plot 4
 for x, w, z in zip(zz, da, PP):
     g = (float(z)-min)/(max-min)
@@ -218,7 +224,6 @@ ax4.plot(zl, x3, color='k', linestyle='--')
 ax4.set_xlim(0.05, 3)
 if (fname == 'Quintessence') or (fname == 'Quintomcopphi'):
     ax4.set_ylabel("${\\rm D_M(z)}/r_d\\sqrt{z}$")
-
 
 
 plot_errorbar(zCombBAO1, 1512.4/rd_fid_DR12, yerr=ersys(22.5, 11.0)/rd_fid_DR12,
@@ -259,6 +264,6 @@ ax4.yaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
 ax4.set_xlabel("$z$")
 
 
-pylab.savefig("Fig1_"+fname+".pdf", bbox_inches='tight')
-#pylab.show()
-
+# pylab.savefig("Fig1_"+fname+".pdf", bbox_inches='tight')
+pylab.savefig("Fig1_"+fname+"_zoom.pdf", bbox_inches='tight', dpi=1000)
+pylab.show()
