@@ -13,7 +13,7 @@ import numpy as np
 import pylab
 
 
-steps = 20
+steps = 9
 coupling = 0
 zl = np.arange(0, 3.05, 0.05)
 
@@ -52,21 +52,21 @@ if fname == 'Quintom_coupling_mquin':
     mphan = 1.2
     coupling = 4.0
     name = 'a) Quintom, $m_{\psi}$=%0.1f, $\\beta=%0.1f$'%(mphan, coupling)
-    mlabel = '$m_\phi$'
+    mlabel = 'm$_\phi$'
 
 if fname == 'Quintom_coupling_mphan':
     T = QuintomCosmology(vary_mphan=True, vary_coupling=True)
     mphi = 1.2
     coupling = 6.0
     name = 'b) Quintom, $m_{\phi}$=%0.1f, $\\beta=%0.1f$'%(mphi, coupling)
-    mlabel = '$m_\psi$'
+    mlabel = 'm$_\psi$'
 
 if fname == 'Quintom_coupling_both':
     T = QuintomCosmology(vary_mquin=True, vary_mphan=True, vary_coupling=True)
     mphi = 1.5
     mphan = 1.0
     coupling = -1
-    name = 'c) Quintom, $m_{\phi}$=%0.1f, $m_{\psi}$=%0.1f'%(mphi, mphan)
+    name = 'c) Quintom, m$_{\phi}$=%0.1f$, m$_{\psi}$=%0.1f'%(mphi, mphan)
     mlabel = '$\\beta$'
 
 
@@ -166,7 +166,7 @@ pylab.rcParams.update(params1)
 
 ## --- Plotting --
 fig, (ax1, ax2, ax3, ax4)= plt.subplots(4, sharex=True, gridspec_kw={'hspace': 0}, figsize=(7,10))
-fig.suptitle(name, fontsize=20,  y=0.91)
+fig.suptitle(name, fontsize=24,  y=0.92)
 
 ## -- Plot 1
 for x, w, z in zip(zz, ww, PP):
@@ -178,7 +178,7 @@ if (fname == 'Quintessence') or (fname == 'Quintomcopphi'):
 ax1.axhline(y=-1.0, color='k', linestyle='--')
 if coupling < 0:
     ax1.set_ylim(-1.5, 0.)
-ax1.set_ylim(-1.2, -0.8) #zoom
+# ax1.set_ylim(-1.2, -0.8) #zoom
 
 
 ## -- Plot 2
@@ -202,8 +202,8 @@ CS3 = plt.contourf(Z, levels, cmap=mymap)
 
 cbaxes = fig.add_axes([0.92, 0.1, 0.02, 0.78])
 cbar = pylab.colorbar(CS3, cax=cbaxes, format='%.1f')
-cbar.set_label(mlabel, rotation=0, fontsize=18, labelpad=-10, y=1.05)
-cbar.ax.tick_params(labelsize=16)
+cbar.set_label(mlabel, rotation=0, fontsize=24, labelpad=-10, y=1.05)
+cbar.ax.tick_params(labelsize=18)
 
 
 ## -- Plot 3
@@ -264,6 +264,6 @@ ax4.yaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
 ax4.set_xlabel("$z$")
 
 
-# pylab.savefig("Fig1_"+fname+".pdf", bbox_inches='tight')
-pylab.savefig("Fig1_"+fname+"_zoom.pdf", bbox_inches='tight', dpi=1000)
+pylab.savefig("Fig1_"+fname+".pdf", bbox_inches='tight')
+# pylab.savefig("Fig1_"+fname+"_zoom.pdf", bbox_inches='tight', dpi=1000)
 pylab.show()
