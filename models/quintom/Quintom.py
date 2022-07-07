@@ -387,12 +387,14 @@ class Quintom:
         ax = Axes3D(fig)
         surf = ax.plot_surface(quin, phan, Pot, cmap=cm.RdYlGn, #bwr,
                                linewidth=0, antialiased=False)
-        #cset = ax.contourf(quin, phan, Pot, zdir='z', offset=-0.2, cmap=cm.RdYlGn)# cm.coolwarm)
-        cset = ax.contourf(quin, phan, Pot, zdir='z', offset=-2, cmap=cm.RdYlGn)# cm.coolwarm)
-        #cset = ax.contour(quin, phan, Pot, zdir='x', offset=-40, cmap=cm.hsv) # cm.coolwarm)
+        # for beta = 0
+        cset = ax.contourf(quin, phan, Pot, zdir='z', offset=-0.2, cmap=cm.RdYlGn)# cm.coolwarm)
+        # for beta = -2, beta = 6
+        # cset = ax.contourf(quin, phan, Pot, zdir='z', offset=-2, cmap=cm.RdYlGn)# cm.coolwarm)
+        # cset = ax.contour(quin, phan, Pot, zdir='x', offset=-40, cmap=cm.hsv) # cm.coolwarm)
         #cset = ax.contour(quin, phan, Pot, zdir='y', offset=40, cmap=cm.hsv) #cm.coolwarm)
 
-        ax.set_zlim(-2, 1)
+        # ax.set_zlim(-2, 1)
         plt.xticks(np.arange(-1, 0.75, 0.5), fontsize=15)
         plt.yticks(fontsize=15)
         for t in ax.zaxis.get_major_ticks(): t.label.set_fontsize(15)
@@ -401,6 +403,7 @@ class Quintom:
         plt.title('$m_\phi$ = %.1f, $m_\psi$=%.1f,  $\\beta$=%.1f'%(self.mquin, self.mphan, self.beta),
                   y=1.0, pad=0.5, fontsize=20)
         cbar = fig.colorbar(surf, shrink=0.5, aspect=5)
+        cbar.ax.set_title('$V(\phi, \psi)$', fontsize=15)
         cbar.ax.tick_params(labelsize=12)
         plt.savefig('Potential_Quintom_Phan_phi_%.1f_psi_%.1f.pdf'%(self.mquin, self.mphan))
         # plt.savefig('Quintom_potential.pdf')
@@ -500,7 +503,7 @@ if __name__ == '__main__':
     # if vary_par is True overrides mass of this field turning into a range
     Q.mquin = 1.5
     Q.mphan = 1.0
-    Q.beta  = -2.0
+    Q.beta  = 0.0
 
     Q.delta = 2.1
     Q.theta = 0.0
