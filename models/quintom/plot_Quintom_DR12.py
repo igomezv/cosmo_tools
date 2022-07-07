@@ -20,8 +20,8 @@ zl = np.arange(0, 3.05, 0.05)
 # fname = 'Quintessence'
 # fname = 'Phantom'
 # fname = 'Quintom_mquin'
-fname = 'Quintom_mphan'
-# fname = 'Quintom_coupling_mquin'
+# fname = 'Quintom_mphan'
+fname = 'Quintom_coupling_mquin'
 # fname = 'Quintom_coupling_mphan'
 # fname = 'Quintom_coupling_both'
 # ---
@@ -173,7 +173,7 @@ for x, w, z in zip(zz, ww, PP):
     g = (float(z) - min)/(max - min)
     b, r = 0, 1 - g
     ax1.plot(x, w, color=(r, g, b))
-if (fname == 'Quintessence') or (fname == 'Quintomcopphi'):
+if (fname == 'Quintessence') or (fname == 'Quintom_coupling_mquin'):
     ax1.set_ylabel('$w(z)$', fontsize=20)
 ax1.axhline(y=-1.0, color='k', linestyle='--')
 if coupling < 0:
@@ -192,7 +192,7 @@ redshifts, obs, errors = [dataHz[:,i] for i in [0,1,2]]
 ax2.errorbar(redshifts, obs, errors, xerr=None, color='blue', marker='o', ls='None',
                 elinewidth =2, capsize=3, capthick = 1, alpha=1, markersize=4)
 ax2.plot(zl, x1 , color='k', linestyle='--')
-if (fname == 'Quintessence') or (fname =='Quintomcopphi'):
+if (fname == 'Quintessence') or (fname =='Quintom_coupling_mquin'):
     ax2.set_ylabel('$H(z)$', fontsize=20)
 
 Z = [[0,0] , [0,0]]
@@ -212,7 +212,7 @@ for x, w, z in zip(zz, dh, PP):
     b, r = 0, 1-g
     (l3,) = ax3.plot(x, w, color=(r ,g, b))
 ax3.plot(zl, x2 , color='k', linestyle='--')
-if (fname == 'Quintessence') or (fname == 'Quintomcopphi'):
+if (fname == 'Quintessence') or (fname == 'Quintom_coupling_mquin'):
     ax3.set_ylabel("${\\rm zD_H(z)}/r_d\\sqrt{z}$")
 
 ## -- Plot 4
@@ -222,7 +222,7 @@ for x, w, z in zip(zz, da, PP):
     (l4,) = ax4.plot(x, w, color=(r, g, b))
 ax4.plot(zl, x3, color='k', linestyle='--')
 ax4.set_xlim(0.05, 3)
-if (fname == 'Quintessence') or (fname == 'Quintomcopphi'):
+if (fname == 'Quintessence') or (fname == 'Quintom_coupling_mquin'):
     ax4.set_ylabel("${\\rm D_M(z)}/r_d\\sqrt{z}$")
 
 
@@ -263,7 +263,7 @@ ax4.yaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
 #ax4.xaxis.set_minor_locator(plt.FixedLocator([0.2,0.5,2]))
 ax4.set_xlabel("$z$")
 
-
 pylab.savefig("Fig1_"+fname+".pdf", bbox_inches='tight')
 # pylab.savefig("Fig1_"+fname+"_zoom.pdf", bbox_inches='tight', dpi=1000)
 pylab.show()
+
