@@ -1,0 +1,20 @@
+SUMMARY
+-------
+analyzer: nested
+nested_algorithm: multi
+dynamic: False
+nlive: 1000
+niter: 14895
+ncall: 72863
+%eff: 21.8163
+logz: 234.7100 +/- 0.1248
+loglikes: [ -1.          -1.          -1.         ... 244.98808289 244.9881134
+ 244.98820496]
+<simplemc.cosmo.Parameter.Parameter object at 0x7f4565e03fd0>: 16.1001 +/- 9.9404
+<simplemc.cosmo.Parameter.Parameter object at 0x7f4565e03fa0>: 12.2786 +/- 9.9509
+
+Elapsed time: 0.824 minutes = 49.429 seconds 
+
+it: 14894 | ncall: 72862 | eff: 20.443 | logz: 234.7000 | dlogz: 0.0100 | loglstar: 244.9823 | point 0.08775966 0.02362545
+neural calls: 11733 | neuralikes: 5766 | neural trains: 8 | Using: Neuralike
+
