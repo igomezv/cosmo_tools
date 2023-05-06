@@ -10,7 +10,7 @@ ncall: 50474
 logz: -5.5893 +/- 0.0958
 loglikes: [-7.43453892e+02 -7.38798233e+02 -6.31391398e+02 ... -4.48833026e-05
  -1.38669089e-05 -5.29257952e-06]
-<simplemc.cosmo.Parameter.Parameter object at 0x7f889c4c3fd0>: 0.7749 +/- 3.1790
-<simplemc.cosmo.Parameter.Parameter object at 0x7f889c4c3fa0>: 0.2897 +/- 2.4707
+<simplemc.cosmo.Parameter.Parameter object at 0x7f9257207fd0>: 0.7749 +/- 3.1790
+<simplemc.cosmo.Parameter.Parameter object at 0x7f9257207fa0>: 0.2897 +/- 2.4707
 
-Elapsed time: 0.112 minutes = 6.707 seconds 
+Elapsed time: 0.112 minutes = 6.736 seconds 
