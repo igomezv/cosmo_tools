@@ -1,0 +1,16 @@
+SUMMARY
+-------
+analyzer: nested
+nested_algorithm: multi
+dynamic: False
+nlive: 1000
+niter: 11073
+ncall: 104991
+%eff: 11.5000
+logz: -6.4711 +/- 0.0910
+loglikes: [-7.15572411e+02 -6.43026807e+02 -6.42374746e+02 ... -1.24608720e-02
+ -1.13940619e-02 -5.90141506e-03]
+<simplemc.cosmo.Parameter.Parameter object at 0x7f879799ec20>: -0.5190 +/- 3.4607
+<simplemc.cosmo.Parameter.Parameter object at 0x7f879799e5f0>: -0.6820 +/- 2.6970
+
+Elapsed time: 1.132 minutes = 67.916 seconds 
