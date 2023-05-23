@@ -3,14 +3,14 @@ SUMMARY
 analyzer: nested
 nested_algorithm: multi
 dynamic: False
-nlive: 1000
-niter: 11783
-ncall: 53729
-%eff: 23.7935
-logz: 235.8329 +/- 0.1112
-loglikes: [  1.00336465   1.00497436   1.01514131 ... 242.99997593 242.99997838
- 242.99999918]
-<simplemc.cosmo.Parameter.Parameter object at 0x7f7a8f2affd0>: 15.5694 +/- 9.3158
-<simplemc.cosmo.Parameter.Parameter object at 0x7f7a8f2affa0>: 15.8180 +/- 9.3188
+nlive: 100
+niter: 1150
+ncall: 521637
+%eff: 0.2398
+logz: 236.1616 +/- 0.3404
+loglikes: [  1.13359011   1.164384     1.3343591  ... 242.99979157 242.99993143
+ 242.99997281]
+<simplemc.cosmo.Parameter.Parameter object at 0x7f2740eb40a0>: 15.5478 +/- 8.8856
+<simplemc.cosmo.Parameter.Parameter object at 0x7f2741218550>: 15.4185 +/- 9.0985
 
-Elapsed time: 0.169 minutes = 10.163 seconds 
+Elapsed time: 10.880 minutes = 652.805 seconds 
