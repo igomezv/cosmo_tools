@@ -1,0 +1,15 @@
+Om			\Omega_m
+Obh2			\Omega_{b}h^2
+h			h
+mphan			m_{\psi}
+Ol			\Omega_\Lambda*
+H0			H_0*
+Age			Age[Gyr]*
+Omrad			\Omega_r
+Omh12			Omh2(z1;z2)*
+Omh13			Omh2(z1;z3)*
+Omh23			Omh2(z2;z3)*
+Orc			\Omega_{rc}*
+DR16BAO_like 			DR16BAO
+HD23_like 			HD23
+theory_prior 			 None 
