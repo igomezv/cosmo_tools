@@ -1,0 +1,11 @@
+SUMMARY
+-------
+analyzer: maxlike
+maxlike: 524.4509
+Om: 0.2853 +/- 0.0221
+Obh2: 0.0220 +/- 0.0005
+h: 0.6864 +/- 0.0259
+w: -1.0082 +/- 0.0840
+wa: 0.2556 +/- 0.5188
+
+Elapsed time: 1.690 minutes = 101.381 seconds 
